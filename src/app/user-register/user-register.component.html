@@ -1,31 +1,54 @@
-<div class="card m-3">
-    <h5 class="card-header">Registration Form</h5>
+<div class="container d-flex justify-content-center mt-5">
+  <div class="card shadow-lg p-4 rounded" style="max-width: 500px; width: 100%;">
+    <h5 class="card-header bg-info text-white text-center rounded-top">User Registration</h5>
     <div class="card-body">
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" formControlName="name" class="form-control" />
+        <!-- First Name -->
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" id="firstName" formControlName="name" class="form-control rounded" placeholder="Enter Name here" required />
         </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="text" formControlName="email" class="form-control" />
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" formControlName="email" class="form-control rounded" placeholder="Enter Email here" required />
         </div>
-        <div class="form-group">
-          <label>Phone</label>
-          <input type="text" formControlName="phone" class="form-control" />
+
+        <!-- Phone -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="text" id="phone" formControlName="phone" class="form-control rounded" placeholder="Enter Phone here" required />
         </div>
-        <!-- <div class="form-group">
-          <label>Address</label>
-          <input type="text" formControlName="address" class="form-control" />
-        </div> -->
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" formControlName="password" class="form-control" />
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" formControlName="password" class="form-control rounded" placeholder="Enter Password here" required />
         </div>
+
+        <!-- Register Button -->
         <div class="text-center">
-          <button class="btn btn-primary mr-1" [disabled]="!this.registerForm.valid">Register</button>
+          <button type="submit" class="btn btn-gradient" [disabled]="!this.registerForm.valid">Register</button>
         </div>
       </form>
     </div>
   </div>
+</div>
+
+<style>
+  .btn-gradient {
+    background: linear-gradient(90deg, #4e73df, #1cc88a);
+    border: none;
+    color: white;
+  }
   
+  .form-control:focus {
+    border-color: #1cc88a;
+    box-shadow: 0 0 5px rgba(28, 188, 116, 0.5);
+  }
+
+  .card {
+    background-color: #f8f9fa;
+  }
+</style>

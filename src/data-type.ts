@@ -4,6 +4,7 @@ export interface signUp {
   password: string;
   phone: number;
   id: string;
+  address?: { addressLine: string }[];
 }
 export interface login {
   email: String;
