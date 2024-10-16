@@ -4,37 +4,136 @@
       "name": "Anirudha Arora",
       "email": "anirudha@gmail.com",
       "phone": "123456789",
+      "address": [
+        {
+          "addressLine": "Amritsar"
+        },
+        {
+          "addressLine": "Punjab"
+        }
+      ],
       "id": "be0b"
     },
     {
       "name": "Sachin verma",
       "email": "sachin@gmail.com",
       "phone": "1234567890",
+      "address": [
+        {
+          "addressLine": "Lucknow"
+        }
+      ],
       "id": "2cf2"
     },
     {
       "name": "Raj Yadav",
       "email": "raj@gmail.com",
       "phone": "8765432134",
+      "address": [
+        {
+          "addressLine": "Dehradun"
+        }
+      ],
       "id": "31e4"
     },
     {
       "name": " Prateek Tiwari",
       "email": "prateek@gmail.com",
       "phone": "234567",
+      "address": [
+        {
+          "addressLine": "Lakhimpur"
+        }
+      ],
       "id": "3e4d"
     },
     {
       "name": "Shivam Verma",
       "email": "shivam@gmail.com",
       "phone": "234567890",
+      "address": [
+        {
+          "addressLine": "Lakhimpur"
+        }
+      ],
       "id": "e68a"
     },
     {
       "name": "Satyam Tiwari",
       "email": "satyam@gmail.com",
       "phone": "38908245678",
+      "address": [
+        {
+          "addressLine": "Kolkata "
+        }
+      ],
       "id": "e298"
+    },
+    {
+      "name": "Vijeta Mishra",
+      "email": "vijeta@gmail.com",
+      "phone": "1234567976",
+      "address": [
+        {
+          "addressLine": "Ayodhya"
+        }
+      ],
+      "id": "bca5"
+    },
+    {
+      "name": "Aastha Modanwal",
+      "email": "aastha@gmail.com",
+      "phone": "78745443556",
+      "address": [
+        {
+          "addressLine": "Bhadohi "
+        }
+      ],
+      "id": "ba12"
+    },
+    {
+      "name": "Gaurav Tripathi",
+      "email": "gaurav@gmail.com",
+      "phone": "896746564287",
+      "address": [
+        {
+          "addressLine": "Lucknow"
+        }
+      ],
+      "id": "6258"
+    },
+    {
+      "name": "Anil",
+      "email": "anil@gmail.com",
+      "phone": "6799744788",
+      "address": [
+        {
+          "addressLine": "Punjab"
+        }
+      ],
+      "id": "9462"
+    },
+    {
+      "name": "Gaurav Kulbe",
+      "email": "gaurav@gmail.com",
+      "phone": "8963562723",
+      "address": [
+        {
+          "addressLine": "Dehradun"
+        }
+      ],
+      "id": "f5fa"
+    },
+    {
+      "name": "BP",
+      "email": "bp@gmail.com",
+      "phone": "234567890",
+      "address": [
+        {
+          "addressLine": "Lucknow"
+        }
+      ],
+      "id": "60fa"
     }
   ]
 }

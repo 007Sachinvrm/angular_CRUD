@@ -1,7 +1,7 @@
 <div class="container">
-  <h3>User List</h3>
+  <h3 class="text-center">User List</h3>
 
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" class="w-100 mb-3">
     <mat-label>Search</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Search users">
   </mat-form-field>
@@ -31,6 +31,16 @@
       <td mat-cell *matCellDef="let user"> {{user.phone}} </td>
     </ng-container>
 
+     <!-- Address Column -->
+     <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>Address</th>
+      <td mat-cell *matCellDef="let user">
+        <ng-container *ngFor="let address of user.address; let last = last">
+          {{ address.addressLine }}<span *ngIf="!last">, </span>
+        </ng-container>
+      </td>
+    </ng-container>
+    
     <!-- Actions Column -->
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Actions </th>

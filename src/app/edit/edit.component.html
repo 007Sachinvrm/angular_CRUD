@@ -1,47 +1,33 @@
-<!-- <div class="card m-3">
-    <h5 class="card-header">Registration Form</h5>
-    <div class="card-body">
-      <form [formGroup]="updateForm" (ngSubmit)="onSubmit(updateForm.value)">
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" formControlName="name" class="form-control" />
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="text" formControlName="email" class="form-control" />
-        </div>
-        <div class="form-group">
-          <label>Phone</label>
-          <input type="text" formControlName="phone" class="form-control" />
-        </div>
-        <div class="text-center">
-          <button class="btn btn-primary mr-1" [disabled]="!this.updateForm.valid">Register</button>
-        </div>
-      </form>
+<div class="container">
+  <h2>Edit User</h2>
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" formControlName="name" class="form-control" />
     </div>
-  </div>
-   -->
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" formControlName="email" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" formControlName="phone" class="form-control" />
+    </div>
 
+    <!-- FormArray for dynamic address input fields -->
+    <div formArrayName="address">
+      <div *ngFor="let address of addressControls.controls; let i = index" [formGroupName]="i" class="form-group">
+        <label>Address {{i + 1}}</label>
+        <input type="text" formControlName="addressLine" class="form-control" />
+        <button type="button" class="btn btn-danger mt-2" (click)="removeAddress(i)">Remove Address</button>
+      </div>
+    </div>
 
-   <div class="container">
-    <h2>Edit User</h2>
-    <form [formGroup]="updateForm" (ngSubmit)="onSubmit(updateForm.value)">
-      <div class="form-group">
-        <label>Name</label>
-        <input type="text" formControlName="name" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" formControlName="email" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label>Phone</label>
-        <input type="text" formControlName="phone" class="form-control" />
-      </div>
-      <div class="text-center">
-        <button class="btn btn-primary mr-3" [disabled]="updateForm.invalid">Update</button>
-        <button class="btn btn-secondary" routerLink="">Cancel</button>
-      </div>
-    </form>
-  </div>
-  
+    <button type="button" class="btn btn-success mt-2" (click)="addAddress()">Add Address</button>
+
+    <div class="text-center mt-3">
+      <button class="btn btn-primary mr-3" [disabled]="updateForm.invalid">Update</button>
+      <button class="btn btn-secondary" routerLink="">Cancel</button>
+    </div>
+  </form>
+</div>
