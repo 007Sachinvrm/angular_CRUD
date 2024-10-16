@@ -1,0 +1,40 @@
+{
+  "user": [
+    {
+      "name": "Anirudha Arora",
+      "email": "anirudha@gmail.com",
+      "phone": "123456789",
+      "id": "be0b"
+    },
+    {
+      "name": "Sachin verma",
+      "email": "sachin@gmail.com",
+      "phone": "1234567890",
+      "id": "2cf2"
+    },
+    {
+      "name": "Raj Yadav",
+      "email": "raj@gmail.com",
+      "phone": "8765432134",
+      "id": "31e4"
+    },
+    {
+      "name": " Prateek Tiwari",
+      "email": "prateek@gmail.com",
+      "phone": "234567",
+      "id": "3e4d"
+    },
+    {
+      "name": "Shivam Verma",
+      "email": "shivam@gmail.com",
+      "phone": "234567890",
+      "id": "e68a"
+    },
+    {
+      "name": "Satyam Tiwari",
+      "email": "satyam@gmail.com",
+      "phone": "38908245678",
+      "id": "e298"
+    }
+  ]
+}
