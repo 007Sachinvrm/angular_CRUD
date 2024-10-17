@@ -11,6 +11,7 @@
 
     <!-- Right-aligned Links (e.g., Logout) -->
     <div class="navbar-nav ms-auto">
+      <span class="navbar-text me-4" *ngIf="isLoggedIn()">Welcome, {{ userName | titlecase}}</span>
       <a class="nav-link" routerLink="logout" (click)="userLogout()" *ngIf="isLoggedIn()">Logout</a>
     </div>
   </div>
