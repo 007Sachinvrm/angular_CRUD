@@ -24,6 +24,7 @@ export class EditComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
+      password: ['', Validators.required],
       address: this.formBuilder.array([]) // Initialize as FormArray
     });
   }

@@ -24,6 +24,7 @@ import { MatSortModule } from '@angular/material/sort';
     HeaderComponent,
     HomeComponent,
     EditComponent
+    
   ],
   imports: [
     BrowserModule,

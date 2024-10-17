@@ -1,33 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Angular CRUD</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="register">Register</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li> -->
-        </ul>
-      </div>
+  <div class="container-fluid">
+    <!-- Navbar Brand (Logo/Title) -->
+    <a class="navbar-brand" href="#">Angular CRUD</a>
+
+    <!-- Left-aligned Links -->
+    <div class="navbar-nav">
+      <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+      <a class="nav-link" routerLink="register-login" *ngIf="!isLoggedIn()">Register/Login</a>
     </div>
-  </nav>
-  
+
+    <!-- Right-aligned Links (e.g., Logout) -->
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" routerLink="logout" (click)="userLogout()" *ngIf="isLoggedIn()">Logout</a>
+    </div>
+  </div>
+</nav>
