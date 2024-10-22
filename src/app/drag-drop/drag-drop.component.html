@@ -1,0 +1,34 @@
+<div class="drag-drop-container">
+  <div class="todo-container">
+    <h4>To Do</h4>
+    <div
+      cdkDropList
+      id="todo"
+      [cdkDropListConnectedTo]="['done']"
+      [cdkDropListData]="todo"
+      (cdkDropListDropped)="drop($event)"
+      class="container"
+    >
+      <div class="item" cdkDrag *ngFor="let item of todo">{{ item }}</div>
+    </div>
+  </div>
+
+  <div class="done-container">
+    <h4>Done (Grid Layout)</h4>
+    <div
+      cdkDropList
+      id="done"
+      [cdkDropListConnectedTo]="[]"
+      [cdkDropListData]="done"
+      (cdkDropListDropped)="drop($event)"
+      class="grid-container"
+    >
+      <div class="grid-item" cdkDrag *ngFor="let item of done">{{ item }}</div>
+    </div>
+
+    <!-- Button to Save Elements -->
+     <div class="button-save">
+    <button class="btn btn-success" (click)="saveElements()">Save</button>
+  </div>
+  </div>
+</div>

@@ -10,3 +10,9 @@ export interface login {
   email: String;
   password: String;
 }
+
+export interface DraggableItem {
+  name: string;
+  id: string;
+  userId: signUp;
+}

@@ -88,5 +88,14 @@ userSignup(user: signUp) {
       this.router.navigate(['/']);
     }
   }
+
+    // Method to save the dragged elements
+    saveDraggedElements(elements: { elements: string[] }): Observable<any> {
+      return this.http.post('http://localhost:3000/elements', elements);
+    }
+
+    getSavedElements() {
+      return this.http.get<{ elements: string[] }>('http://localhost:3000/elements');
+    }
   
 }
