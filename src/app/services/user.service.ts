@@ -35,38 +35,17 @@ userSignup(user: signUp) {
       )
       .subscribe((result: any) => {
         if (result && result.body?.length) {
-          // If user credentials are correct
           console.log("User logged in", result);
           this.invalidUserAuth.emit(false);
           localStorage.setItem('user', JSON.stringify(result.body[0]));
           this.router.navigate(['/']);
         } else {
-          // If credentials are incorrect or user not found
           console.log("Invalid credentials");
           this.invalidUserAuth.emit(true);
         }
       });
   }
   
-
-  // userLogin(data: login) {
-  //   this.http
-  //     .get(
-  //       `http://localhost:3000/user?email=${data.email}&password=${data.password}`,
-  //       { observe: 'response' }
-  //     )
-  //     .subscribe((result: any) => {
-  //       if (result && result.body?.length) {
-  //         console.log("User logged in", result);
-  //         this.invalidUserAuth.emit(false);
-  //         localStorage.setItem('user', JSON.stringify(result.body[0]));
-  //         this.router.navigate(['/']);
-  //       }else{
-  //         this.invalidUserAuth.emit(true);
-  //       }
-  //     });
-  // }
-
   getUsers(): Observable<signUp[]> {
     return this.http.get<signUp[]>('http://localhost:3000/user');
   }
@@ -89,7 +68,6 @@ userSignup(user: signUp) {
     }
   }
 
-    // Method to save the dragged elements
     saveDraggedElements(elements: { elements: string[] }): Observable<any> {
       return this.http.post('http://localhost:3000/elements', elements);
     }

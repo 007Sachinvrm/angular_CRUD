@@ -15,4 +15,8 @@ export interface DraggableItem {
   name: string;
   id: string;
   userId: signUp;
+  label: string;
+  x: number;
+  y: number;
+  'z-index': number;
 }
