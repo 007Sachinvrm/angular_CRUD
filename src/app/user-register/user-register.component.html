@@ -1,8 +1,37 @@
 <div class="container d-flex justify-content-center mt-5">
-  <div class="card shadow-lg p-4 rounded" style="max-width: 500px; width: 100%;">
+  <div class="card shadow-lg p-4 rounded" style="max-width: 500px; width: 100%;" *ngIf = "!showLogin">
+    <h5 class="card-header bg-info text-white text-center rounded-top">User Login</h5>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="userLogin(loginForm.value)">
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" formControlName="email" class="form-control rounded" placeholder="Enter Email here" required />
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" formControlName="password" class="form-control rounded" placeholder="Enter Password here" required />
+        </div>
+
+        <!-- Register Button -->
+        <div class="text-center mb-3">
+          <button type="submit" class="btn btn-gradient">Login</button>
+        </div>
+        <div class="text-center">
+          <p>Don't have Account?<a class = "auth-toggle-link" (click) = "openSignup()"> Signup</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="card shadow-lg p-4 rounded" style="max-width: 500px; width: 100%;" *ngIf = "showLogin">
     <h5 class="card-header bg-info text-white text-center rounded-top">User Registration</h5>
     <div class="card-body">
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+      <form [formGroup]="registerForm" (ngSubmit)="userSignup(registerForm.value)">
         <!-- First Name -->
         <div class="mb-3">
           <label for="firstName" class="form-label">First Name</label>
@@ -28,12 +57,17 @@
         </div>
 
         <!-- Register Button -->
-        <div class="text-center">
+        <div class="text-center mb-3">
           <button type="submit" class="btn btn-gradient" [disabled]="!this.registerForm.valid">Register</button>
         </div>
+        
+        <div class="text-center">
+        <p>Already have Account?<a class = "auth-toggle-link" (click) = "openLogin()"> Login here.</a></p>
+      </div>
       </form>
     </div>
   </div>
+
 </div>
 
 <style>
@@ -52,3 +86,4 @@
     background-color: #f8f9fa;
   }
 </style>
+

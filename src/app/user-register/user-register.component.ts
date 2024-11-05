@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
-import { signUp } from '../../data-type';
+import { login, signUp } from '../../data-type';
 import { Router } from '@angular/router'; // Import Router
 
 @Component({
@@ -11,6 +11,9 @@ import { Router } from '@angular/router'; // Import Router
 })
 export class UserRegisterComponent implements OnInit {
   registerForm: FormGroup; 
+  loginForm: FormGroup;
+  showLogin = false;
+  authError: string = '';
 
   constructor(
     private formBuilder: FormBuilder, 
@@ -23,13 +26,49 @@ export class UserRegisterComponent implements OnInit {
       phone: ['', Validators.required],
       password: ['', Validators.required]
     });
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    })
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.users.userAuthReload();
+  }
 
-  onSubmit(data: signUp) {
+  userSignup(data: signUp) {
    console.log("first", data);
    this.users.userSignup(data);
    this.registerForm.reset();  
+  }
+
+  userLogin(data: login): void {
+    this.users.userLogin(data);
+    this.users.invalidUserAuth.subscribe((result) => {
+      if (result) {
+        // Show an alert for invalid credentials
+        alert('Invalid username or password');
+        this.authError = 'Invalid username or password';
+        // Optionally, reset the login form if necessary
+        this.loginForm.reset();
+      }
+    });
+  }
+  
+  // userLogin(data: login): void{
+  //   this.users.userLogin(data);
+  //   this.users.invalidUserAuth.subscribe((result)=>{
+  //     if(result){
+  //       alert('Invalid username or password');
+  //       }
+  //   })
+  // }
+
+  openLogin() {
+    this.showLogin = false;
+  }
+
+  openSignup() {
+    this.showLogin = true;
   }
 }

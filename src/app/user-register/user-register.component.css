@@ -7,3 +7,7 @@
     text-align: center;
   }
   
+  .auth-toggle-link{
+    color:blue;
+    cursor: pointer;
+}

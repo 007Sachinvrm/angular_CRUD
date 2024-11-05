@@ -16,6 +16,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DndModule } from 'ngx-drag-drop';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { MatSortModule } from '@angular/material/sort';
     UserRegisterComponent,
     HeaderComponent,
     HomeComponent,
-    EditComponent
+    EditComponent,
+    DragDropComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSortModule
+    MatSortModule,
+    DragDropModule,
+    DndModule
   ],
   providers: [
     provideClientHydration(),

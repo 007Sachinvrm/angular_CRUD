@@ -1,3 +1,14 @@
 .navbar {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+  }
+
+  .navbar-text{
+    color: rgb(255, 253, 163);
+    font-size: 15px;
+  }
+
+  .navbar-brand{
+    color: rgb(65, 233, 255);
+    font-size: 25px;
+    font-weight: 500;
   }

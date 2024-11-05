@@ -1,0 +1,98 @@
+<div style="height:3rem"></div>
+<div class="wrapper">
+  <div class="wrapper-list">
+    <div
+      [style.display]="onDrag ? 'none' : ''"
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todos"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop1($event)"
+    >
+      <div
+        class="example-box"
+        *ngFor="let item of todos"
+        cdkDrag
+        (mousedown)="off = { x: $event.offsetX || 0, y: $event.offsetY || 0 }"
+        (cdkDragStarted)="onDrag = true"
+        (cdkDragEnded)="onDrag = false"
+        [cdkDragData]="item"
+        (cdkDragMoved)="moved($event)"
+      >
+        {{ item.label }}
+        <div *cdkDragPlaceholder class="field-placeholder"></div>
+      </div>
+    </div>
+    <div class="example-list" [style.display]="!onDrag ? 'none' : ''">
+      <div class="example-box" *ngFor="let item of todos">
+        {{ item.label }}
+      </div>
+    </div>
+  </div>
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="done1"
+    class="drag-zone"
+    cdkDropListSortingDisabled="true"
+    (cdkDropListDropped)="drop1($event, true)"
+  >
+    <ng-container *ngFor="let item of done1">
+      <div
+        cdkDrag
+        class="item-box"
+        [style.top.px]="item.y"
+        [style.left.px]="item.x"
+        [style.z-index]="item['z-index']"
+        (cdkDragStarted)="changeZIndex(item)"
+        (cdkDragDropped)="changePosition($event, item)"
+      >
+        {{ item.label }}
+        <div *cdkDragPlaceholder class="field-placeholder"></div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="button-save">
+    <button class="btn btn-success" (click)="saveDoneList()">Save</button>
+  </div>
+</div>
+
+
+
+
+<!-- Old Drag and Drop  -->
+
+<!-- <div class="drag-drop-container">
+  <div class="todo-container">
+    <h4>To Do</h4>
+    <div
+      cdkDropList
+      id="todo"
+      [cdkDropListConnectedTo]="['done']"
+      [cdkDropListData]="todo"
+      (cdkDropListDropped)="drop($event)"
+      class="container"
+    >
+      <div class="item" cdkDrag *ngFor="let item of todo">{{ item }}</div>
+    </div>
+  </div>
+
+  <div class="done-container">
+    <h4>Done (Grid Layout)</h4>
+    <div
+      cdkDropList
+      id="done"
+      [cdkDropListConnectedTo]="[]"
+      [cdkDropListData]="done"
+      (cdkDropListDropped)="drop($event)"
+      class="grid-container"
+    >
+      <div class="grid-item" cdkDrag *ngFor="let item of done">{{ item }}</div>
+    </div>
+
+     <div class="button-save">
+    <button class="btn btn-success" (click)="saveElements()">Save</button>
+  </div>
+  </div>
+</div> -->
