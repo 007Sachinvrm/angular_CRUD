@@ -294,14 +294,6 @@
       ]
     },
     {
-      "id": "1892",
-      "elements": []
-    },
-    {
-      "id": "f12a",
-      "elements": []
-    },
-    {
       "id": "ad99",
       "elements": [
         {
@@ -326,6 +318,312 @@
           "label": "Fall asleep",
           "x": 385.5,
           "y": 152,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "b362",
+      "elements": [
+        {
+          "label": "Pick up groceries",
+          "x": 143.5,
+          "y": 99,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 288.5,
+          "y": 57,
+          "zIndex": 0
+        },
+        {
+          "label": "Pick up groceries",
+          "x": 95.5,
+          "y": 5,
+          "zIndex": 0
+        },
+        {
+          "label": "Get to work",
+          "x": 119,
+          "y": 193,
+          "zIndex": 0
+        },
+        {
+          "label": "Fall asleep",
+          "x": 308,
+          "y": 190,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 454,
+          "y": 134,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "ab72",
+      "elements": [
+        {
+          "label": "Pick up groceries",
+          "x": 215.5,
+          "y": 72,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 238,
+          "y": 174,
+          "zIndex": 0
+        },
+        {
+          "label": "Fall asleep",
+          "x": 470,
+          "y": 123,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "b233",
+      "elements": [
+        {
+          "label": "Pick up groceries",
+          "x": 79,
+          "y": 88,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 137,
+          "y": 152,
+          "zIndex": 0
+        },
+        {
+          "label": "Fall asleep",
+          "x": 267.5,
+          "y": 226,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "90f0",
+      "elements": [
+        {
+          "label": "Get to work",
+          "x": 85.5,
+          "y": 33,
+          "zIndex": 0
+        },
+        {
+          "label": "Pick up groceries",
+          "x": 384,
+          "y": 140,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 185,
+          "y": 174,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "5313",
+      "elements": [
+        {
+          "label": "Pick up groceries",
+          "x": 110.5,
+          "y": 46,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 307.5,
+          "y": 152,
+          "zIndex": 0
+        },
+        {
+          "label": "Fall asleep",
+          "x": 164.5,
+          "y": 212,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "8429",
+      "elements": [
+        {
+          "label": "Get to work",
+          "x": 155.5,
+          "y": 14,
+          "zIndex": 0
+        },
+        {
+          "label": "Pick up groceries",
+          "x": 87,
+          "y": 104,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 226,
+          "y": 207,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "f3d9",
+      "elements": [
+        {
+          "label": "Get to work",
+          "x": 156.5,
+          "y": 82,
+          "zIndex": 0
+        },
+        {
+          "label": "Pick up groceries",
+          "x": 54.5,
+          "y": 174,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 228,
+          "y": 205,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 343,
+          "y": 102,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "f8e6",
+      "elements": [
+        {
+          "label": "Get to work",
+          "x": 56,
+          "y": 115,
+          "zIndex": 0
+        },
+        {
+          "label": "Pick up groceries",
+          "x": 264,
+          "y": 90,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "36f4",
+      "elements": [
+        {
+          "label": "Get to work",
+          "x": 155.5,
+          "y": 20,
+          "zIndex": 0
+        },
+        {
+          "label": "Pick up groceries",
+          "x": 225,
+          "y": 276,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "c46f",
+      "elements": [
+        {
+          "label": "Get to work",
+          "x": 63,
+          "y": 49,
+          "zIndex": 0
+        },
+        {
+          "label": "Pick up groceries",
+          "x": 301,
+          "y": 110,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 552.5,
+          "y": 182,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 200.5,
+          "y": 231,
+          "zIndex": 0
+        },
+        {
+          "label": "Fall asleep",
+          "x": 529,
+          "y": 65,
+          "zIndex": 0
+        },
+        {
+          "label": "Fall asleep",
+          "x": 132,
+          "y": 148,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "3565",
+      "elements": [
+        {
+          "label": "Get to work",
+          "x": 164,
+          "y": 50,
+          "zIndex": 0
+        },
+        {
+          "label": "Pick up groceries",
+          "x": 267.5,
+          "y": 160,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 109,
+          "y": 168,
+          "zIndex": 0
+        },
+        {
+          "label": "Go home",
+          "x": 358,
+          "y": 391,
+          "zIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "8638",
+      "elements": [
+        {
+          "label": "Get to work",
+          "x": 47.5,
+          "y": 83,
+          "zIndex": 0
+        },
+        {
+          "label": "Get to work",
+          "x": 216.5,
+          "y": 170,
           "zIndex": 1
         }
       ]

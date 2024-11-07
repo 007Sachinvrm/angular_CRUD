@@ -72,8 +72,13 @@ userSignup(user: signUp) {
       return this.http.post('http://localhost:3000/elements', elements);
     }
 
-    getSavedElements() {
-      return this.http.get<{ elements: string[] }>('http://localhost:3000/elements');
-    }
+getSavedElements() {
+  return this.http.get<{ elements: any[] }>('http://localhost:3000/elements');
+}
+
+    saveDoneElements(elements: { elements: { label: string, x: number, y: number, zIndex: number }[] }) {
+      return this.http.post('http://localhost:3000/elements', elements);
+  }
+  
   
 }

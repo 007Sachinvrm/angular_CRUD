@@ -1,4 +1,4 @@
-import { Component, ViewChildren, ViewChild, ElementRef, VERSION } from '@angular/core';
+import { Component, ViewChildren, ViewChild, ElementRef, VERSION, OnInit } from '@angular/core';
 import { CdkDragDrop, copyArrayItem, CdkDragMove } from '@angular/cdk/drag-drop';
 import { UserService } from '../services/user.service';
 import { DraggableItem } from '../../data-type';
@@ -43,49 +43,74 @@ export class DragDropComponent {
   constructor(private userService: UserService, private http: HttpClient) {}
 
   ngOnInit() {
-    this.loadSavedElements(); // Load saved elements when the component initializes
+    this.loadSavedElements();
   }
 
-    loadSavedElements() {
-    this.userService.getSavedElements().subscribe((response: any) => {
-      if (response && response.elements) {
-        this.done = response.elements; // Prefill the done array with saved elements
-        console.log('Loaded elements:', this.done);
-      }
-    }, error => {
-      console.error('Error fetching saved elements:', error);
-    });
-  }
+  //------------------------------------------------------------------------
 
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer !== event.container && event.container.id === 'done') {
-      copyArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    }
-  }
+  //   loadSavedElements() {
+  //   this.userService.getSavedElements().subscribe((response: any) => {
+  //     if (response && response.elements) {
+  //       this.done = response.elements;
+  //       console.log('Loaded elements:', this.done);
+  //     }
+  //   }, error => {
+  //     console.error('Error fetching saved elements:', error);
+  //   });
+  // }
 
-  // Method to save the dragged elements in the right container
-  saveElements() {
-    const elementsToSave = {
-      elements: this.done
-    };
+  // drop(event: CdkDragDrop<string[]>) {
+  //   if (event.previousContainer !== event.container && event.container.id === 'done') {
+  //     copyArrayItem(
+  //       event.previousContainer.data,
+  //       event.container.data,
+  //       event.previousIndex,
+  //       event.currentIndex
+  //     );
+  //   }
+  // }
 
-    // Call the service to save elements
-    this.userService.saveDraggedElements(elementsToSave).subscribe(response => {
-      console.log('Elements saved successfully:', response);
-    }, error => {
-      console.error('Error saving elements:', error);
-    });
-  }
+  // saveElements() {
+  //   const elementsToSave = {
+  //     elements: this.done
+  //   };
 
+  //   // Call the service to save elements
+  //   this.userService.saveDraggedElements(elementsToSave).subscribe(response => {
+  //     console.log('Elements saved successfully:', response);
+  //   }, error => {
+  //     console.error('Error saving elements:', error);
+  //   });
+  // }
+//----------------------------------------------------------------------------------------
 
 
 
 //New Fuctions for Drag and Drop--------------------------
+
+
+loadSavedElements() {
+  this.userService.getSavedElements().subscribe(
+      (response: any) => {
+          if (response && response.elements) {
+              this.done1 = response.elements.map((item: any) => ({
+                  label: item.label,
+                  x: item.x,
+                  y: item.y,
+                  'z-index': item.zIndex,  
+              }));
+              console.log('Data prefilled successfully:', this.done1);
+          } else {
+              this.done1 = [];  // Reset if no elements are found
+          }
+      },
+      error => {
+          console.error('Failed to load saved data', error);
+      }
+  );
+}
+
+
 
   changeZIndex(item: any) {
     this.done1.forEach((x) => (x['z-index'] = x == item ? 1 : 0));
@@ -151,24 +176,29 @@ export class DragDropComponent {
 
   saveDoneList() {
     const payload = {
-      elements: this.done1.map(item => ({
-        label: item.label,
-        x: item.x,
-        y: item.y,
-        zIndex: item['z-index']
-      }))
+        elements: this.done1.map(item => ({
+            label: item.label,
+            x: item.x,
+            y: item.y,
+            zIndex: item['z-index']
+        }))
     };
     
-    this.http.post('http://localhost:3000/elements', payload).subscribe(
-      response => {
-        console.log('Save successful', response);
-        // Optionally, add a notification here to inform the user of successful saving
-      },
-      error => {
-        console.error('Save failed', error);
-        // Optionally, show an error message here
-      }
+    this.userService.saveDoneElements(payload).subscribe(
+        response => {
+            console.log('Save successful', response);
+            // Call loadSavedElements after saving
+            this.loadSavedElements();  // Refresh the displayed data
+        },
+        error => {
+            console.error('Save failed', error);
+        }
     );
-  }
+}
+
+resetDoneList() {
+  this.done1 = []; // Clears the displayed items
+}
+
 
 }
